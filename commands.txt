@@ -1,0 +1,14 @@
+Commands with their use :-
+
+1. mkdir ->  Create a new directory.
+2. cd ->  Change the current directory.
+3. cd .. ->  Move up to the parent directory.
+4. touch ->  Create a new file.
+5. ls ->  List files and directories in the current directory.
+6. rm ->  Remove files or directories.
+7. rmdir ->  Remove empty directories.
+8. pwd ->  Print the current working directory.
+9. cp ->  Copy files or directories.
+10. mv ->  Move or rename files or directories.
+11. cat ->  Display the contents of a file.
+12. echo ->  Print text or variables to the screen.
