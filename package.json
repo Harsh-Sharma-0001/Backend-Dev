@@ -1,0 +1,21 @@
+{
+  "name": "backend-dev",
+  "version": "1.0.0",
+  "description": "nodejs_tutorial",
+  "homepage": "https://github.com/satvik1311/Backend-Dev#readme",
+  "bugs": {
+    "url": "https://github.com/satvik1311/Backend-Dev/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/satvik1311/Backend-Dev.git"
+  },
+  "license": "ISC",
+  "author": "Harsh",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev" : "node index.js"
+  }
+}

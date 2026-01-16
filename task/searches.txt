@@ -1,0 +1,2 @@
+Product: Laptop | Price: 50000 | Discount: 10% | Final Price: 45000
+Product: Laptop | Price: 50000 | Discount: 10% | Final Price: 45000
