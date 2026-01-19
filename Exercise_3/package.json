@@ -1,0 +1,14 @@
+{
+  "name": "exercise_3",
+  "version": "1.0.0",
+  "main": "systemLogger.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node systemLogger.js"
+  },
+  "keywords": [],
+  "author": "Harsh Sharma",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}

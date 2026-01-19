@@ -1,0 +1,14 @@
+{
+  "name": "exercise_1",
+  "version": "1.0.0",
+  "main": "wordCount.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node wordCount.js"
+  },
+  "keywords": [],
+  "author": "Harsh Sharma",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}

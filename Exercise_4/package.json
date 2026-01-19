@@ -1,0 +1,14 @@
+{
+  "name": "exercise_4",
+  "version": "1.0.0",
+  "main": "todoServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node todoServer.js"
+  },
+  "keywords": [],
+  "author": "Harsh Sharma",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}
