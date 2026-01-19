@@ -1,22 +1,22 @@
 {
   "name": "backend-dev",
   "version": "1.0.0",
-  "description": "nodejs_tutorial",
-  "homepage": "https://github.com/Harsh-Sharma-0001/Backend-Dev#readme",
-  "bugs": {
-    "url": "https://github.com/Harsh-Sharma-0001/Backend-Dev/issues"
+  "description": "This is my Backend Repository of BridgeLabz Classes for 6th Sem.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Harsh-Sharma-0001/Backend-Dev.git"
   },
+  "keywords": [],
+  "author": "Harsh Sharma",
   "license": "ISC",
-  "author": "Harsh",
   "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node index.js"
+  "bugs": {
+    "url": "https://github.com/Harsh-Sharma-0001/Backend-Dev/issues"
   },
-  "keywords": []
+  "homepage": "https://github.com/Harsh-Sharma-0001/Backend-Dev#readme"
 }
