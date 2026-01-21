@@ -40,3 +40,4 @@ fs.rm("newDirectory", {recursive : true} ,(err) =>{   // For active and files co
     }
     console.log("Directory is removed");
 });
+
