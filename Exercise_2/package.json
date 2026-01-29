@@ -1,0 +1,14 @@
+{
+  "name": "exercise_2",
+  "version": "1.0.0",
+  "main": "logAnalyzer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node logAnalyzer.js"
+  },
+  "keywords": [],
+  "author": "Harsh Sharma",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": ""
+}
