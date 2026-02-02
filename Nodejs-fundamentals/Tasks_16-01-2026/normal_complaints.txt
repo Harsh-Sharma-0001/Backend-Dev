@@ -1,0 +1,22 @@
+=== NORMAL COMPLAINTS LOG ===
+
+(No complaints yet)
+
+
+Ticket ID: TKT-995238
+Name: Harsh
+Issue: App not working
+Priority: normal
+----------------------------
+
+Ticket ID: TKT-639086
+Name: Harsh
+Issue: App not working
+Priority: normal
+----------------------------
+
+Ticket ID: TKT-722278
+Name: Harsh
+Issue: App not working
+Priority: normal
+----------------------------
