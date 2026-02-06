@@ -1,104 +1,116 @@
 const express = require("express");
+const fs = require("fs");
+
 const app = express();
 
 const PORT = 8000;
 
 app.use(express.json());
-
 const students = [
   { id: 1, name: "Harsh", branch: "CSE" },
-  { id: 2, name: "Shrey", branch: "ECE" },
-  { id: 3, name: "Halwai", branch: "Majdoor" },
+  { id: 2, name: "Halwaii", branch: "Majdoor" },
+  { id: 3, name: "Shrey", branch: "ECE" },
 ];
 
+
 app.get("/", (req, res) => {
-  res.send("Welcome to Home Page");
+  res.send("Welcome to home page");
 });
 
+
 app.get("/students", (req, res) => {
-  res.json(students);
+  fs.readFile("./students.json", (err, data) => {
+    if (err) {
+      return res.status(500).send("Error occured");
+    }
+    return res.status(200).send(JSON.parse(data));
+  });
 });
 
 
 app.get("/students/search", (req, res) => {
-  const { name, branch } = req.query;
+  const branch = req.query.branch;
 
-  let filteredStudents = students;
-
-  if (name) {
-    filteredStudents = filteredStudents.filter((student) =>
-      student.name.toLowerCase().includes(name.toLowerCase())
-    );
+  if (!branch) {
+    return res.status(400).send("please provide query parameter");
   }
-
-  if (branch) {
-    filteredStudents = filteredStudents.filter(
-      (student) => student.branch.toLowerCase() === branch.toLowerCase()
-    );
-  }
-
-  if (filteredStudents.length === 0) {
-    return res.status(404).json({ message: "Student's data not found in database" });
-  }
-
-  res.json(filteredStudents);
+  const foundStudents = students.filter((s) => s.branch == branch);
+  return res.json(foundStudents);
 });
 
 
 app.get("/students/:id", (req, res) => {
-  const id = parseInt(req.params.id);
+  const id = req.params.id;
 
-  const student = students.find((s) => s.id === id);
-
-  if (!student) {
-    return res.status(404).json({ message: "Student's data not found in database" });
+  const arrayIndex = students.findIndex((s) => s.id == id);
+  if (arrayIndex == -1) {
+    return res.status(404).send("Student not found");
   }
 
-  res.json(student);
+  const foundStudent = students[arrayIndex];
+  res.json(foundStudent);
 });
 
 
 app.post("/students/register", (req, res) => {
   const { name, branch } = req.body;
+  if (!name || !branch) return res.status(400).send("Details missing");
 
-  if (!name || !branch) {
-    return res.status(400).json({ message: "Please provide name and branch" });
-  }
+  //  Read the file first
+  fs.readFile("./students.json", "utf-8", (err, data) => {
+    if (err) return res.status(500).send("Could not read file");
 
-  const newStudent = {
-    id: students.length ? students[students.length - 1].id + 1 : 1,
-    name,
-    branch,
-  };
+    // . Parse existing data or start with empty array
+    const students = JSON.parse(data || "[]");
 
-  students.push(newStudent);
+    //  Create and push new student
+    const newStudent = {
+      id: students.length > 0 ? students[students.length - 1].id + 1 : 1,
+      name,
+      branch,
+    };
+    students.push(newStudent);
 
-  res.status(201).json({message: "Student registered successfully", student: newStudent});
+    //  Write the WHOLE array back to the file (Overwriting)
+    fs.writeFile("./students.json", JSON.stringify(students, null, 2), (err) => {
+        if (err) return res.status(500).send("Error writing to file");
+
+        return res.status(201).json({ message: "Registered!", student: newStudent });
+      },
+    );
+  });
 });
 
 
-
 app.put("/students/:id", (req, res) => {
-  const id = Number(req.params.id);
-  const { name, branch } = req.body;
+  const userId = parseInt(req.params.id);
 
-  const studentIndex = students.findIndex((s) => s.id === id);
+  const foundIndex = students.findIndex((s) => s.id === userId);
 
-  if (studentIndex === -1) {
-    return res.status(404).json({ message: "Student's data not found in database" });
+  if (foundIndex == -1) {
+    return res.status(404).send("Student  not found");
   }
 
-  if (!name && !branch) {
-    return res.status(400).json({ message: "Provide at least one field to update" });
+  students[foundIndex] = { ...students[foundIndex], ...req.body };
+
+  const result = { message: "updated sucessfully", students: students };
+  return res.status(200).json(result);
+});
+
+
+app.delete("/students/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  const foundIndex = students.findIndex((s) => s.id == id);
+  if (foundIndex == -1) {
+    return res.status(400).send("Student not found");
   }
+  students.splice(foundIndex, 1);
 
-  if (name) students[studentIndex].name = name;
-  if (branch) students[studentIndex].branch = branch;
-
-  res.status(200).json({message: "Student updated successfully", student: students[studentIndex] });
+  return res.status(200).json({message: "Student deleted sucessfully", updatedStudents: students});
 });
 
 
 app.listen(PORT, () => {
-  console.log(`Server is listening on port : ${PORT}`);
+  console.log("Server is listening on port:8000");
 });
