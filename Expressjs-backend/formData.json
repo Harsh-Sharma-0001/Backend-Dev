@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "name": "Harsh Sharma ",
+    "email": "harsh12345@gmail.com",
+    "branch": "CSE"
+  },
+  {
+    "id": 2,
+    "name": "InTouch",
+    "email": "admin@intouch.com",
+    "branch": "ECE"
+  }
+]
