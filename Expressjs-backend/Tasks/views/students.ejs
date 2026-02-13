@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>All Students</title>
+</head>
+
+<body>
+
+    <h1>Registered Students</h1>
+
+    <form method="GET" action="/students">
+        <select name="branch">
+            <option value="">All Branches</option>
+            <option value="CSE">CSE</option>
+            <option value="Civil">Civil</option>
+            <option value="Mechanical">Mechanical</option>
+            <option value="IT">IT</option>
+        </select>
+        <button type="submit">Filter</button>
+    </form>
+
+    <hr>
+
+    <h3>Total Students: <%= total %>
+    </h3>
+
+    <% if (students.length===0) { %>
+        <h2>No students registered</h2>
+        <% } else { %>
+
+            <table border="1" cellpadding="10">
+                <tr>
+                    <th>Name</th>
+                    <th>Branch</th>
+                    <th>Action</th>
+                </tr>
+
+                <% students.forEach(student=> { %>
+                    <tr>
+                        <td>
+                            <%= student.name %>
+                        </td>
+                        <td>
+                            <%= student.branch %>
+                        </td>
+                        <td>
+                            <a href="/students/delete/<%= student.id %>">
+                                Delete
+                            </a>
+                        </td>
+                    </tr>
+                    <% }) %>
+            </table>
+
+            <% } %>
+
+                <br>
+                <a href="/">Go Back</a>
+
+</body>
+
+</html>
