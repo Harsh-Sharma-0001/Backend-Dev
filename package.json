@@ -1,0 +1,25 @@
+{
+  "name": "backend-dev",
+  "version": "1.0.0",
+  "description": "This is my Backend Repository of BridgeLabz Classes for 6th Sem.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Harsh-Sharma-0001/Backend-Dev.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Harsh-Sharma-0001/Backend-Dev/issues"
+  },
+  "homepage": "https://github.com/Harsh-Sharma-0001/Backend-Dev#readme",
+  "dependencies": {
+    "body-parser": "^2.2.2",
+    "ejs": "^4.0.1",
+    "express": "^5.2.1"
+  }
+}
