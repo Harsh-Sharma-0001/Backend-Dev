@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Authors</title>
+</head>
+
+<body>
+
+    <h1>Authors</h1>
+
+    <table border="1" cellpadding="10">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Actions</th>
+        </tr>
+
+        <% authors.forEach(author=> { %>
+            <tr>
+                <td>
+                    <%= author.id %>
+                </td>
+                <td>
+                    <%= author.name %>
+                </td>
+                <td>
+                    <%= author.country %>
+                </td>
+                <td>
+                    <form method="POST" action="/authors/<%= author.id %>?_method=DELETE">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            <% }) %>
+    </table>
+
+    <br>
+
+    <h2>Add New Author</h2>
+
+    <form method="POST" action="/authors">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="country" placeholder="Country" required>
+        <button type="submit">Add Author</button>
+    </form>
+
+</body>
+
+</html>
