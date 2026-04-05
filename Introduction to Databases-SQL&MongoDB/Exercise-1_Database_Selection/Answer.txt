@@ -1,0 +1,39 @@
+1. Online Banking System → SQL
+
+Requires ACID properties (accuracy & consistency are critical)
+Structured data (accounts, transactions)
+Example: MySQL, PostgreSQL
+
+👉 Justification: Strong consistency and transaction reliability are essential.
+
+
+2. Social Media Platform → NoSQL
+
+Handles huge, unstructured data (posts, likes, comments)
+Needs high scalability
+
+👉 Justification: Flexible schema + horizontal scaling.
+
+
+3. Real-time Chat Application → NoSQL 
+
+Requires low latency & high availability
+Data is semi-structured (messages, timestamps)
+
+👉 Justification: Fast writes/reads and scalability (e.g., MongoDB, Cassandra).
+
+
+4. Hospital Patient Records → SQL 
+
+Needs strict consistency and data integrity
+Structured records (patients, treatments)
+
+👉 Justification: Errors can be life-threatening → strong ACID compliance.
+
+
+5. IoT Sensor Data Collection → NoSQL
+
+Massive high-velocity data streams
+Often time-series data
+
+👉 Justification: Scales easily and handles large volumes efficiently.

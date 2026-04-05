@@ -1,0 +1,8 @@
+use("ordersDB")
+
+db.orders.insertOne({
+  orderId: NumberInt(12345),
+  orderDate: ISODate("2024-01-15T00:00:00Z"),
+  totalAmount: NumberDecimal("99.99"),
+  items: ["item1", "item2"]
+})

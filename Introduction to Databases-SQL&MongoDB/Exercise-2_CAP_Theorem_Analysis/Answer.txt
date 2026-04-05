@@ -1,0 +1,22 @@
+1. Stock Trading Platform → CP (Consistency + Partition Tolerance)
+
+Must avoid incorrect trades
+👉 Consistency is more important than availability.
+
+
+2. Content Delivery Network (CDN) → AP (Availability + Partition Tolerance)
+
+Content should always be accessible
+👉 Slight inconsistency is acceptable.
+
+
+3. Airline Booking System → CP (Consistency + Partition Tolerance)
+
+No double booking allowed
+👉 Strong consistency required.
+
+
+4. Video Streaming Service → AP (Availability + Partition Tolerance)
+
+Users prefer uninterrupted playback
+👉 Temporary inconsistency (buffering quality) is acceptable.
